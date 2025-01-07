@@ -1,0 +1,9 @@
+services:
+  kafka:
+    image: apache/kafka-native:3.9.0
+    network_mode: host
+  joiner:
+    image: kafka-streams-joiner:0.0.1-SNAPSHOT
+    depends_on:
+      - kafka
+    network_mode: host
